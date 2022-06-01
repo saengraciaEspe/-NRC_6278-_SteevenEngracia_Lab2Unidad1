@@ -79,6 +79,36 @@ class Grafo:
         for clave in self.m_lista_de_adj.keys():
             print("node", clave, ": ", self.m_lista_de_adj[clave])
 
+    def recorrer_BEA(self, nodo_inicial):
+       
+        """
+        muestra el recorrido del árbol usando la búsqueda de anchura
+
+        Parámetros
+        ----------
+        nodo inicial : entero
+                        nodo con el que comienza a recorrer
+
+
+        """
+        visitado = set()
+        cola_de_espera = Queue()
+
+       
+        cola_de_espera.put(nodo_inicial)
+        visitado.add(nodo_inicial)
+
+        while not cola_de_espera.empty():
+            
+            nodo_actual = cola_de_espera.get()
+            print(nodo_actual, end = " ")
+
+           
+            for (nodo_siguiente, peso) in self.m_lista_de_adj[nodo_actual]:
+                if nodo_siguiente not in visitado:
+                    cola_de_espera.put(nodo_siguiente)
+                    visitado.add(nodo_siguiente)
+
 
 if __name__ == "__main__":
     #### Ejemplo #####
