@@ -63,7 +63,21 @@ class Grafo:
         if not self.m_dirijido:
             self.m_lista_de_adj[nodo2].add((nodo1, peso))
 	
-  
+    def mostrar_lista_de_adj(self):
+        """
+        Muestra la representación del grafo.
+
+        Parámetros 
+        ----------
+        No hay parámetros
+
+        Devuelve
+        --------
+        No devuelve ningún valor
+        """
+
+        for clave in self.m_lista_de_adj.keys():
+            print("node", clave, ": ", self.m_lista_de_adj[clave])
 
 
 if __name__ == "__main__":
@@ -77,6 +91,9 @@ if __name__ == "__main__":
     print(g.m_nodo);
     #Se imprime los datos de los nodos
     print(g.m_lista_de_adj);
+
+    #Se muestra la lista de adyacencia
+    g.mostrar_lista_de_adj()
 
 
 
