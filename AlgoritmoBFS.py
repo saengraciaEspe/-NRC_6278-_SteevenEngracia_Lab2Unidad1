@@ -114,7 +114,7 @@ if __name__ == "__main__":
     #### Ejemplo #####
 
     ##Se instancia un grafo de 5 nodos
-    g = Grafo(5)
+    g = Grafo(6)
     # Se imprime la cantidad de nodos del atributo m_num_de_nodos
     print(g.m_num_de_nodos);
     #Se imprime los nodos que contiene el grafo
@@ -122,8 +122,19 @@ if __name__ == "__main__":
     #Se imprime los datos de los nodos
     print(g.m_lista_de_adj);
 
+    #Se aumentan los enlaces
+    g.aumentar_enlace(0, 1)
+    g.aumentar_enlace(0, 2)
+    g.aumentar_enlace(1, 2)
+    g.aumentar_enlace(1, 4)
+    g.aumentar_enlace(2, 3)
+    g.aumentar_enlace(2,5)
+
     #Se muestra la lista de adyacencia
     g.mostrar_lista_de_adj()
+
+    #muestra el recorrido del grafo usando búsqueda en anchura desde 1
+    g.recorrer_BEA(1)
 
 
 
