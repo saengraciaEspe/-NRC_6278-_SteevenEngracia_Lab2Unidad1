@@ -39,6 +39,29 @@ class Grafo:
 		
        
         self.m_lista_de_adj = {node: set() for node in self.m_nodo}      
+    
+    def aumentar_enlace(self, nodo1, nodo2, peso=1):
+        """
+        Añade enlace al grafo
+
+        Parámetros
+        ----------
+        nodo1 : entero
+                nodo que formará el nuevo enlace
+        nodo2 : entero
+                nodo que será parte del nuevo enlace
+
+        peso : entero, omitible
+                valor numérico asignado al enlace
+
+        Devuelve
+        --------
+        No devuelve
+        """
+        self.m_lista_de_adj[nodo1].add((nodo2, peso))
+
+        if not self.m_dirijido:
+            self.m_lista_de_adj[nodo2].add((nodo1, peso))
 	
   
 
@@ -50,6 +73,11 @@ if __name__ == "__main__":
     g = Grafo(5)
     # Se imprime la cantidad de nodos del atributo m_num_de_nodos
     print(g.m_num_de_nodos);
+    #Se imprime los nodos que contiene el grafo
+    print(g.m_nodo);
+    #Se imprime los datos de los nodos
+    print(g.m_lista_de_adj);
+
 
 
    
