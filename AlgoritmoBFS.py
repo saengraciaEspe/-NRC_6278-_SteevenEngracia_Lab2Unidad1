@@ -29,7 +29,8 @@ class Grafo:
             num_de_nodos: entero
                             número de nodos del grafo
             dirijido:   
-                            indica si el grafo es dirigido
+                            indica si el grafo es dirigido,
+                            valor por defecto es verdadero
         """
         self.m_num_de_nodos = num_de_nodos
         self.m_nodo = range(self.m_num_de_nodos)
