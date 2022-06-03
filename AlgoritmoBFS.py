@@ -57,7 +57,7 @@ class Grafo:
 
         Devuelve
         --------
-        No devuelve
+        Función vacía
         """
         self.m_lista_de_adj[nodo1].add((nodo2, peso))
 
